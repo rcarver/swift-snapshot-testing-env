@@ -1,6 +1,6 @@
 # SnapshotTestingEnvOverlay
 
-A drop-in replacement for swift-snapshot-testing that allows the snapshots directory
+A drop-in replacement for [swift-snapshot-testing](https://github.com/pointfreeco/swift-snapshot-testing) that allows the snapshots directory
 to be configured via ENV variable.
 
 This supports running on Xcode Cloud where tests don't have access to the file system,
