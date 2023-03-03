@@ -16,7 +16,7 @@ public enum SnapshotDirectory {
     /// This style may be configured via an ENV variable, for example to find snapshots
     /// in an available directory for Xcode Cloud.
     ///
-    ///   SNAPSHOTTESTING_PACKAGE_PATH=/Volumes/workspace/respository/ci_scripts/snapshots
+    ///   SNAPSHOTTESTING_PACKAGES_PATH=/Volumes/workspace/respository/ci_scripts/snapshots
     ///
     /// For example:
     ///
@@ -85,7 +85,7 @@ extension SnapshotDirectory {
             self = .path(path)
             return
         }
-        if let path = ProcessInfo.processInfo.environment["SNAPSHOTTESTING_PACKAGE_PATH"] {
+        if let path = ProcessInfo.processInfo.environment["SNAPSHOTTESTING_PACKAGES_PATH"] {
             self = .packageSnapshotsAtPath(path)
             return
         }

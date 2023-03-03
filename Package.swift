@@ -3,11 +3,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "swift-snapshot-testing-env",
+    name: "swift-snapshot-testing-env-overlay",
     products: [
         .library(
-            name: "SnapshotTestingEnv",
-            targets: ["SnapshotTestingEnv"]),
+            name: "SnapshotTestingEnvOverlay",
+            targets: ["SnapshotTestingEnvOverlay"]),
     ],
     dependencies: [
         .package(
@@ -17,14 +17,14 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "SnapshotTestingEnv",
+            name: "SnapshotTestingEnvOverlay",
             dependencies: [
                 .product(name: "SnapshotTesting", package: "swift-snapshot-testing")
             ]
         ),
         .testTarget(
-            name: "SnapshotTestingEnvTests",
-            dependencies: ["SnapshotTestingEnv"]
+            name: "SnapshotTestingEnvOverlayTests",
+            dependencies: ["SnapshotTestingEnvOverlay"]
         ),
     ]
 )
