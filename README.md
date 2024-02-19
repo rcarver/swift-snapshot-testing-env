@@ -1,6 +1,6 @@
 # SnapshotTestingEnvOverlay
 
-A drop-in replacement for swift-snapshot-testing that allows the snapshots directory
+A drop-in replacement for [swift-snapshot-testing](https://github.com/pointfreeco/swift-snapshot-testing) that allows the snapshots directory
 to be configured via ENV variable.
 
 This supports running on Xcode Cloud where tests don't have access to the file system,
@@ -10,6 +10,10 @@ with the exception of a `ci_scripts` directory. By symlinking your snapshots to
 ```bash
 SNAPSHOTTESTING_PACKAGES_PATH=/Volumes/workspace/respository/ci_scripts/snapshots
 ```
+
+Setting this ENV var means your snapshots are found in `ci_scripts/snapshots` instead of
+the standard location relative to the test file. By *not* setting this variable in 
+local development the normal snapshot location and workflow is untouched.
 
 ### Example Script
 
@@ -36,3 +40,7 @@ find $search_path_from_snapshots -type d -name "__Snapshots__" | grep -v .build 
     ln -s "$dir" "$parent_name"
 done
 ```
+
+## License 
+
+MIT
