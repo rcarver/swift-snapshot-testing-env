@@ -1,6 +1,6 @@
 import XCTest
 
-@testable import SnapshotTestingEnv
+@testable import SnapshotTestingEnvOverlay
 
 final class SnapshotDirectoryTests: XCTestCase {
 
